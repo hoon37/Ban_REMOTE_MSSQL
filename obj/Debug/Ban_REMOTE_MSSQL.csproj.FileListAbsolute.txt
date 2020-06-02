@@ -1,0 +1,8 @@
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\bin\Debug\Ban_REMOTE_MSSQL.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\bin\Debug\Ban_REMOTE_MSSQL.exe
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\bin\Debug\Ban_REMOTE_MSSQL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\obj\Debug\Ban_REMOTE_MSSQL.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\obj\Debug\Ban_REMOTE_MSSQL.exe
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\obj\Debug\Ban_REMOTE_MSSQL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\obj\Debug\Ban_REMOTE_MSSQL.csproj.ResolveComReference.cache
