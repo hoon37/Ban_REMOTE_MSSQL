@@ -54,23 +54,38 @@ namespace Ban_REMOTE_MSSQL
 
                 foreach (EventLog log in ele)
                 {
-                    foreach (EventLogEntry entry in log.Entries)
+                    IEnumerable<EventLogEntry> Iele = log.Entries.Cast<EventLogEntry>().Where(x => x.InstanceId == 4625 || x.InstanceId == 3221243928);
+
+                    foreach (EventLogEntry entry in Iele)
                     {
-                        if (entry.InstanceId == 4625 || entry.InstanceId == 3221243928)
+                        MatchCollection matches = rx.Matches(entry.Message);
+
+                        if (matches.Count > 0)
                         {
-                            MatchCollection matches = rx.Matches(entry.Message);
-
-                            if (matches.Count > 0)
-                            {
-                                if (ipTable.ContainsKey(matches[0].Value))
-                                    ipTable[matches[0].Value] += 1;
-                                else
-                                    ipTable.Add(matches[0].Value, 1);
-
-                                //FirewallAPI.AddInboudRuleIPBlock("REMOTE_BAN-" + matches[0].Value, FirewallAPI.Protocol.Any, matches[0].Value);
-                            }
+                            if (ipTable.ContainsKey(matches[0].Value))
+                                ipTable[matches[0].Value] += 1;
+                            else
+                                ipTable.Add(matches[0].Value, 1);
                         }
                     }
+
+                    //foreach (EventLogEntry entry in log.Entries)
+                    //{
+                    //    if (entry.InstanceId == 4625 || entry.InstanceId == 3221243928)
+                    //    {
+                    //        MatchCollection matches = rx.Matches(entry.Message);
+
+                    //        if (matches.Count > 0)
+                    //        {
+                    //            if (ipTable.ContainsKey(matches[0].Value))
+                    //                ipTable[matches[0].Value] += 1;
+                    //            else
+                    //                ipTable.Add(matches[0].Value, 1);
+
+                    //            //FirewallAPI.AddInboudRuleIPBlock("REMOTE_BAN-" + matches[0].Value, FirewallAPI.Protocol.Any, matches[0].Value);
+                    //        }
+                    //    }
+                    //}
                 }
 
                 //foreach (EventLog log in remoteEventLogs) {
