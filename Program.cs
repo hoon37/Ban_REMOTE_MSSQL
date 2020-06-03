@@ -22,6 +22,7 @@ namespace Ban_REMOTE_MSSQL
             const string FirewallName = "***REMOTE_BAN***";
             const string RemoteCategory = "Security";
             const string MSSQLCategory = "Application";
+            string[] whitelist;
 
             //초기화
             try {
@@ -33,6 +34,8 @@ namespace Ban_REMOTE_MSSQL
                 m = ini["Application"]["MSSQL"].ToBool();
 
                 fc = ini["Rule"]["FailedCount"].ToInt();
+
+                whitelist = ini["whitelist"]["ip"].ToString().Split(',');
             }
             catch (Exception ex) {
                 ErrorLog.WriteError(ex.Message);
@@ -106,6 +109,13 @@ namespace Ban_REMOTE_MSSQL
 
                     FirewallAPI.RemoveInboundRule(FirewallName);
                     IPs.Remove(IPs.Length - 1, 1);
+
+                    if (whitelist != null) {
+                        foreach (string whiteip in whitelist)
+                            IPs.Replace(whiteip, string.Empty);
+                        IPs.Replace(",,", ",");
+                    }
+
                     FirewallAPI.AddInboudRuleIPBlock(FirewallName, FirewallAPI.Protocol.Any, IPs.ToString());
                 }
             }
