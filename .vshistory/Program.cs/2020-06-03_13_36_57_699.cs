@@ -22,7 +22,6 @@ namespace Ban_REMOTE_MSSQL
             const string FirewallName = "***REMOTE_BAN***";
             const string RemoteCategory = "Security";
             const string MSSQLCategory = "Application";
-
             string[] whitelist;
 
             //초기화
@@ -36,10 +35,7 @@ namespace Ban_REMOTE_MSSQL
 
                 fc = ini["Rule"]["FailedCount"].ToInt();
 
-                if (ini["whitelist"]["ip"].ToString().Trim().Equals(string.Empty))
-                    whitelist = null;
-                else
-                    whitelist = ini["whitelist"]["ip"].ToString().Split(',');
+                whitelist = ini["whitelist"]["ip"].ToString().Split(',');
             }
             catch (Exception ex) {
                 ErrorLog.WriteError(ex.Message);
@@ -73,23 +69,24 @@ namespace Ban_REMOTE_MSSQL
                 }
 
                 StringBuilder IPs = new StringBuilder(string.Empty);
-                IEnumerable<KeyValuePair<string, int>> items = ipTable.Where(x => x.Value >= fc);
+                System.Collections.Generic.IEnumerable<KeyValuePair<string, int>> items = ipTable.Where(x => x.Value >= fc);
                 foreach (KeyValuePair<string, int> item in items)
                     IPs.Append(item.Key).Append(',');
 
                 if (!IPs.ToString().Trim().Equals(string.Empty))
                 {
-                    IPs.Append(FirewallAPI.GetBlockIP(FirewallName).Trim()).Append(',');
+                    foreach (string ip in FirewallAPI.GetBlockIP(FirewallName).Split(','))
+                        IPs.Append(ip.Trim()).Append(',');
+
+                    FirewallAPI.RemoveInboundRule(FirewallName);
+                    IPs.Remove(IPs.Length - 1, 1);
 
                     if (whitelist != null) {
                         foreach (string whiteip in whitelist)
-                            IPs.Replace(whiteip + "/255.255.255.255,", string.Empty);
+                            IPs.Replace(whiteip, string.Empty);
+                        IPs.Replace(",,", ",");
                     }
 
-                    FirewallAPI.RemoveInboundRule(FirewallName);
-                    char t = IPs.ToString()[IPs.Length - 1];
-                    if (t == ',')
-                        IPs.Remove(IPs.Length - 1, 1);
                     FirewallAPI.AddInboudRuleIPBlock(FirewallName, FirewallAPI.Protocol.Any, IPs.ToString());
                 }
             }
