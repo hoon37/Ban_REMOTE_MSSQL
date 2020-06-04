@@ -82,10 +82,8 @@ namespace Ban_REMOTE_MSSQL
                     IPs.Append(FirewallAPI.GetBlockIP(FirewallName).Trim()).Append(',');
 
                     if (whitelist != null) {
-                        foreach (string whiteip in whitelist) {
-                            IPs.Replace(whiteip + ",", string.Empty);
+                        foreach (string whiteip in whitelist)
                             IPs.Replace(whiteip + "/255.255.255.255,", string.Empty);
-                        }
                     }
 
                     FirewallAPI.RemoveInboundRule(FirewallName);
