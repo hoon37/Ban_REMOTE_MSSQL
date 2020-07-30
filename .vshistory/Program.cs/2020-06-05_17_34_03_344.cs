@@ -78,26 +78,20 @@ namespace Ban_REMOTE_MSSQL
 
                 if (!IPs.ToString().Trim().Equals(string.Empty))
                 {
-                    string existsIps = FirewallAPI.GetBlockIP(FirewallName).Trim();
+                    IPs.Append(FirewallAPI.GetBlockIP(FirewallName).Trim()).Append(',');
 
-                    if (!existsIps.Trim().Equals(string.Empty)) {
-                        IPs.Append(existsIps).Append(',');
-
-                        if (whitelist != null)
-                        {
-                            foreach (string whiteip in whitelist)
-                            {
-                                IPs.Replace(whiteip + ",", string.Empty);
-                                IPs.Replace(whiteip + "/255.255.255.255,", string.Empty);
-                            }
+                    if (whitelist != null) {
+                        foreach (string whiteip in whitelist) {
+                            IPs.Replace(whiteip + ",", string.Empty);
+                            IPs.Replace(whiteip + "/255.255.255.255,", string.Empty);
                         }
-
-                        FirewallAPI.RemoveInboundRule(FirewallName);
-                        char t = IPs.ToString()[IPs.Length - 1];
-                        if (t == ',')
-                            IPs.Remove(IPs.Length - 1, 1);
-                        FirewallAPI.AddInboudRuleIPBlock(FirewallName, FirewallAPI.Protocol.Any, IPs.ToString());
                     }
+
+                    FirewallAPI.RemoveInboundRule(FirewallName);
+                    char t = IPs.ToString()[IPs.Length - 1];
+                    if (t == ',')
+                        IPs.Remove(IPs.Length - 1, 1);
+                    FirewallAPI.AddInboudRuleIPBlock(FirewallName, FirewallAPI.Protocol.Any, IPs.ToString());
                 }
             }
             catch (Exception ex)

@@ -1,0 +1,11 @@
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\bin\Debug\Ban_REMOTE_MSSQL_Manual.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\bin\Debug\Ban_REMOTE_MSSQL_Manual.exe
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\bin\Debug\Ban_REMOTE_MSSQL_Manual.pdb
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.csproj.ResolveComReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.frmMain.resources
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.exe
+C:\Users\Administrator\Documents\Visual Studio 2019\Projects\Ban_REMOTE_MSSQL\Ban_REMOTE_MSSQL_Manual\obj\Debug\Ban_REMOTE_MSSQL_Manual.pdb
