@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Ban_REMOTE_MSSQL
+namespace nowLibrary
 {
     public class ErrorLog
     {
