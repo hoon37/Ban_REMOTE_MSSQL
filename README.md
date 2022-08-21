@@ -6,3 +6,9 @@ https://lab.cliel.com/entry/RDP%EC%9B%90%EA%B2%A9%EB%8D%B0%EC%8A%A4%ED%81%AC%ED%
 
 Here's what we can do with ini files.
 https://github.com/Enichan/Ini
+
+해당 project는 'https://github.com/cliel/Ban_Server'로 이동되었습니다.
+The project has been moved to 'https://github.com/cliel/Ban_Server'.
+
+여기 Repository보다는 위의 Repository를 사용하시기 바랍니다.
+Please use the Repository above rather than the Repository here.
